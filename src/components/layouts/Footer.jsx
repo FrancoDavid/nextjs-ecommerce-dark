@@ -2,7 +2,7 @@
 
 export default function Footer() {
     return (
-        <footer className="bg-gray-200 text-gray-700 botton-0 w-full h-full p-4">
+        <footer className="bg-gray-200 text-gray-700 w-full h-full p-4">
             <div className="container mx-auto flex justify-start">
                 <div className="p-3">
                     <h1 className="text-xl font-bold text-black cursor-pointer mb-4">DarkShop</h1>
