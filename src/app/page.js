@@ -1,3 +1,4 @@
+import Categories from "@/components/layouts/Categories";
 import Cover from "@/components/layouts/Cover";
 import Highlight from "@/components/layouts/Highlight";
 
@@ -6,6 +7,7 @@ export default function Home() {
     <>
       <Cover />
       <Highlight />
+      <Categories />
     </>
   );
 }
