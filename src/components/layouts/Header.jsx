@@ -4,7 +4,21 @@ import { ShoppingCartIcon } from '@heroicons/react/24/outline';
 import { UserCircleIcon } from '@heroicons/react/24/outline';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 
+import { useScroll } from "@/contexts/ScrollView";
+
 export default function Header() {
+    const { highLighNewArrivals, highLighTopSelling, categories } = useScroll();
+
+    const handleScrollToNewArrivals = () => {
+        highLighNewArrivals.current.scrollIntoView({ behavior: 'smooth' });
+    }
+    const handleScrollToTopSelling = () => {
+        highLighTopSelling.current.scrollIntoView({ behavior: 'smooth' });
+    }
+    const handleScrollToCategories = () => {
+        categories.current.scrollIntoView({ behavior: 'smooth' });
+    }
+
     return (
         <>
             <header className="bg-black stycky top-0 z-50">
@@ -19,9 +33,9 @@ export default function Header() {
                     <a className="text-3xl font-bold text-black cursor-pointer">DarkShop</a>
                     <nav className="flex items-center space-x-6">
                         <a className="hover:text-grey-700 cursor-pointer">Home</a>
-                        <a className="hover:text-grey-700 cursor-pointer">New Arribal</a>
-                        <a className="hover:text-grey-700 cursor-pointer">Top Seller</a>
-                        <a className="hover:text-grey-700 cursor-pointer">Categories</a>
+                        <a className="hover:text-grey-700 cursor-pointer" onClick={handleScrollToNewArrivals}>New Arribal</a>
+                        <a className="hover:text-grey-700 cursor-pointer" onClick={handleScrollToTopSelling}>Top Seller</a>
+                        <a className="hover:text-grey-700 cursor-pointer" onClick={handleScrollToCategories}>Categories</a>
                         <a className="hover:text-grey-700 cursor-pointer">Shop</a>
                     </nav>
                     <div className="mx-8">
