@@ -8,7 +8,7 @@ export default function Header() {
     return (
         <>
             <header className="bg-black stycky top-0 z-50">
-                <div className="container mx-auto flex justify-around items-center p-2">
+                <div className="container mx-auto flex justify-center items-center p-2">
                     <span className="text-white text-sm">Sign up and get 20% off to your first order.
                         <strong className="cursor-pointer"> Sign Up Now</strong></span>
                     <span className="text-white cursor-pointer"><XMarkIcon className="h-6 w-6" /></span>
@@ -16,9 +16,12 @@ export default function Header() {
             </header>
             <header className="bg-white shadow-md stycky top-0 z-50">
                 <div className="container mx-auto flex justify-between items-center p-4">
-                    <a className="text-xl font-bold text-black cursor-pointer">DarkShop</a>
+                    <a className="text-3xl font-bold text-black cursor-pointer">DarkShop</a>
                     <nav className="flex items-center space-x-6">
-                        <a className="hover:text-grey-700 cursor-pointer">Cover</a>
+                        <a className="hover:text-grey-700 cursor-pointer">Home</a>
+                        <a className="hover:text-grey-700 cursor-pointer">New Arribal</a>
+                        <a className="hover:text-grey-700 cursor-pointer">Top Seller</a>
+                        <a className="hover:text-grey-700 cursor-pointer">Categories</a>
                         <a className="hover:text-grey-700 cursor-pointer">Shop</a>
                     </nav>
                     <div className="mx-8">
