@@ -7,7 +7,7 @@ export default function Cover() {
                 <h1 className="font-bold text-6xl mb-5">FIND CLOTHES THAT MATCHES YOUR STYLE</h1>
                 <p className="text-base text-gray-600">Browse through our diverse range of meticulously crafted garments,
                     designed to bring out your individuality and cater to your sense of style.</p>
-                <button class="bg-black text-white px-6 py-3 mt-4 rounded-4xl w-[210px] hover:bg-gray-800">
+                <button className="bg-black text-white px-6 py-3 mt-4 rounded-4xl w-[210px] hover:bg-gray-800">
                     Shop now
                 </button>
             </div>
