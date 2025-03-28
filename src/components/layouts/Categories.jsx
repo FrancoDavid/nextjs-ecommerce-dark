@@ -10,16 +10,16 @@ export default function Categories() {
                     </h3>
                 </div>
                 <div className="grid grid-cols-3 gap-4">
-                    <div className="p-4 h-[280px] bg-white bg-[url('/imgs/image-11.png')] bg-cover bg-center rounded-[20px]">
+                    <div className="p-4 h-[280px] bg-white bg-[url('/imgs/image-11.png')] bg-cover bg-center rounded-[20px] object-cover">
                         <h4 className="font-bold text-4xl">Casual</h4>
                     </div>
-                    <div className="p-4 h-[280px] col-span-2 bg-white bg-[url('/imgs/image-12.png')] bg-cover bg-center rounded-[20px]">
+                    <div className="p-4 h-[280px] col-span-2 bg-white bg-[url('/imgs/image-12.png')] bg-cover bg-center rounded-[20px] object-cover">
                         <h4 className="font-bold text-4xl">Formal</h4>
                     </div>
-                    <div className="p-4 h-[280px] col-span-2 bg-white bg-[url('/imgs/image-13.png')] bg-cover bg-center rounded-[20px]">
+                    <div className="p-4 h-[280px] col-span-2 bg-white bg-[url('/imgs/image-13.png')] bg-cover bg-center rounded-[20px] object-cover">
                         <h4 className="font-bold text-4xl">Party</h4>
                     </div>
-                    <div className="p-4 h-[280px] bg-white bg-[url('/imgs/image-14.png')] bg-cover bg-center rounded-[20px]">
+                    <div className="p-4 h-[280px] bg-white bg-[url('/imgs/image-14.png')] bg-cover bg-center rounded-[20px] object-cover">
                         <h4 className="font-bold text-4xl">Gym</h4>
                     </div>
                 </div>
