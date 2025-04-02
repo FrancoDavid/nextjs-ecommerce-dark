@@ -6,7 +6,7 @@ import { toast } from "sonner";
 import useLoginModalStore from "@/stores/User/useLoginModal"
 import useUserStore from "@/stores/User/useUser";
 
-import { authLoginService } from "@/services/Auth"
+import { postLoginService } from "@/services/Auth"
 
 import SpinLoad from "../common/SpinLoad";
 
@@ -25,7 +25,7 @@ export default function LoginModal() {
     }
     const handleSubmit = async (e) => {
         setLoading(true)
-        authLoginService(form)
+        postLoginService(form)
             .then(async (res) => {
                 const response = await res.json()
 

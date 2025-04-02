@@ -4,11 +4,10 @@ import { useState } from "react";
 import { toast } from "sonner";
 
 import useRegisterModalStore from "@/stores/User/useRegisterModal";
-
-import { authRegisterService } from "@/services/Auth";
+import { postRegisterService } from "@/services/Auth";
+import { useBanner } from "@/contexts/Banner";
 
 import SpinLoad from "../common/SpinLoad";
-import { useBanner } from "@/contexts/Banner";
 
 export default function RegisterModal() {
     const { isOpen: isOpenModal, close: closeModal } = useRegisterModalStore();
@@ -28,7 +27,7 @@ export default function RegisterModal() {
     };
     const handleSubmit = async () => {
         setLoading(true);
-        authRegisterService({
+        postRegisterService({
             name,
             email,
             password,

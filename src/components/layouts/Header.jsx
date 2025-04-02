@@ -85,26 +85,26 @@ export default function Header() {
                     </div>
                     <div className="flex items-center space-x-4">
                         <a className="cursor-pointer"><ShoppingCartIcon className="h-6 w-6 text-gray-700" /></a>
-                        <div class="relative inline-block text-left" ref={userDropdownRef}>
+                        <div className="relative inline-block text-left" ref={userDropdownRef}>
                             <div>
                                 <button type="button"
-                                    class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 shadow-xs ring-gray-300 ring-inset hover:bg-gray-50"
+                                    className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 shadow-xs ring-gray-300 ring-inset hover:bg-gray-50"
                                     id="menu-button" aria-expanded="true" aria-haspopup="true" onClick={handleOpenUserDropdown}>
                                     <UserCircleIcon className="h-6 w-6 text-gray-700" />
-                                    <svg class="-mr-1 size-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
-                                        <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                                    <svg className="-mr-1 size-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                                        <path fillRule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clipRule="evenodd" />
                                     </svg>
                                 </button>
                             </div>
                             {isOpenDropdownUser && (
-                                <div class="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white ring-1 shadow-lg ring-black/5 focus:outline-hidden" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-                                    <div class="py-1" role="none">
-                                        {!isLoggedIn && <a class="block px-4 py-2 text-sm text-gray-700 cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-0" onClick={handleOpenLoginModal}>Log in</a>}
-                                        {isLoggedIn && <a class="block px-4 py-2 text-sm text-gray-700 cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-1">Profile</a>}
+                                <div className="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white ring-1 shadow-lg ring-black/5 focus:outline-hidden" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                                    <div className="py-1" role="none">
+                                        {!isLoggedIn && <a className="block px-4 py-2 text-sm text-gray-700 cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-0" onClick={handleOpenLoginModal}>Log in</a>}
+                                        {isLoggedIn && <a className="block px-4 py-2 text-sm text-gray-700 cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-1">Profile</a>}
                                     </div>
                                     {isLoggedIn && (
-                                        <div class="py-1" role="none">
-                                            <a class="block px-4 py-2 text-sm text-gray-700 cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-6" onClick={handleLogout}>Log out</a>
+                                        <div className="py-1" role="none">
+                                            <a className="block px-4 py-2 text-sm text-gray-700 cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-6" onClick={handleLogout}>Log out</a>
                                         </div>
                                     )}
                                 </div>

@@ -1,5 +1,8 @@
-export async function authRegisterService(data) {
-  return await fetch("http://localhost:8080/api/user/register",{
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+
+export async function postRegisterService(data) {
+  return await fetch(API_URL+"user/register",{
     body: JSON.stringify(data),
     method: "POST",
     headers: {
@@ -8,8 +11,8 @@ export async function authRegisterService(data) {
   })  
 }
 
-export async function authLoginService(data) {
-  return await fetch("http://localhost:8080/api/user/login",{
+export async function postLoginService(data) {
+  return await fetch(API_URL+"user/login",{
     body: JSON.stringify(data),
     method: "POST",
     headers: {
