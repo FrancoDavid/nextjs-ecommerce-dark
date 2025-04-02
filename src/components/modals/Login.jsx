@@ -3,14 +3,16 @@
 import { useState } from "react"
 import { toast } from "sonner";
 
-
 import useLoginModalStore from "@/stores/User/useLoginModal"
+import useUserStore from "@/stores/User/useUser";
+
 import { authLoginService } from "@/services/Auth"
 
 import SpinLoad from "../common/SpinLoad";
 
 export default function LoginModal() {
     const { isOpen: isOpenModal, close: closeModal } = useLoginModalStore()
+    const { setUser } = useUserStore()
 
     const [form, setForm] = useState({
         email: "",
@@ -23,12 +25,12 @@ export default function LoginModal() {
     }
     const handleSubmit = async (e) => {
         setLoading(true)
-        console.log("form", form)
         authLoginService(form)
-            .then((res) => {
+            .then(async (res) => {
+                const response = await res.json()
+
                 if (!res.ok) {
-                    const error = res.json()
-                    toast.error("Error login: " + error?.message || "User not logged in")
+                    toast.error("Error login: " + response?.message || "User not logged in")
                     return
                 }
 
@@ -37,6 +39,7 @@ export default function LoginModal() {
                     email: "",
                     password: ""
                 })
+                setUser(response.data)
 
                 toast.success("User logged in!")
             })
