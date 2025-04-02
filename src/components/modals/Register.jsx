@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { toast } from "sonner";
 
-import useRegisterModalStore from "@/stores/useRegisterModal";
+import useRegisterModalStore from "@/stores/User/useRegisterModal";
 
 import { authRegisterService } from "@/services/Auth";
 
@@ -59,7 +59,7 @@ export default function RegisterModal() {
             })
     };
     const handleClose = () => {
-        close();
+        closeModal();
         setName("");
         setEmail("");
         setPassword("");
@@ -77,16 +77,16 @@ export default function RegisterModal() {
                             &times;
                         </button>
 
-                        <h2 className="text-xl font-semibold mb-4">Crear cuenta</h2>
+                        <h2 className="text-xl font-semibold mb-4">Sign in</h2>
 
                         <form action={handleSubmit}>
-                            <input name="name" disabled={loading} type="text" placeholder="Nombre" className="w-full mb-3 px-4 py-2 border rounded-md" onChange={handleChangesValue} />
-                            <input name="email" disabled={loading} type="email" placeholder="Correo" className="w-full mb-3 px-4 py-2 border rounded-md" onChange={handleChangesValue} />
-                            <input name="password" disabled={loading} type="password" placeholder="Contraseña" className="w-full mb-4 px-4 py-2 border rounded-md" onChange={handleChangesValue} />
+                            <input name="name" disabled={loading} type="text" placeholder="Name" className="w-full mb-3 px-4 py-2 border rounded-md" onChange={handleChangesValue} />
+                            <input name="email" disabled={loading} type="email" placeholder="E-mail" className="w-full mb-3 px-4 py-2 border rounded-md" onChange={handleChangesValue} />
+                            <input name="password" disabled={loading} type="password" placeholder="Password" className="w-full mb-4 px-4 py-2 border rounded-md" onChange={handleChangesValue} />
                             {loading && <SpinLoad />}
                             {!loading && (
                                 <button type="submit" className="w-full bg-black text-white py-2 rounded-md hover:bg-gray-800 transition">
-                                    Registrarme
+                                    Sign in
                                 </button>
 
                             )}

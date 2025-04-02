@@ -6,13 +6,15 @@ import { UserCircleIcon } from '@heroicons/react/24/outline';
 import { useScroll } from "@/contexts/ScrollView";
 import { useBanner } from '@/contexts/Banner';
 
-import useRegisterModalStore from "@/stores/useRegisterModal";
+import useRegisterModalStore from "@/stores/User/useRegisterModal";
+import useLoginModalStore from "@/stores/User/useLoginModal";
 
 export default function Header() {
     const { highLighNewArrivals, highLighTopSelling, categories } = useScroll();
     const { isOpenBanner } = useBanner();
 
-    const { open } = useRegisterModalStore();
+    const { open: openRegisterModal } = useRegisterModalStore();
+    const { open: openLoginModal } = useLoginModalStore();
 
     const handleScrollToNewArrivals = () => {
         highLighNewArrivals.current.scrollIntoView({ behavior: 'smooth' });
@@ -23,9 +25,8 @@ export default function Header() {
     const handleScrollToCategories = () => {
         categories.current.scrollIntoView({ behavior: 'smooth' });
     }
-    const handleOpenRegisterModal = () => {
-        open();
-    }
+    const handleOpenRegisterModal = () => openRegisterModal();
+    const handleOpenLoginModal = () => openLoginModal();
 
     return (
         <>
@@ -56,7 +57,7 @@ export default function Header() {
                     </div>
                     <div className="flex items-center space-x-4">
                         <a className="cursor-pointer"><ShoppingCartIcon className="h-6 w-6 text-gray-700" /></a>
-                        <a className="cursor-pointer"><UserCircleIcon className="h-6 w-6 text-gray-700" /></a>
+                        <a className="cursor-pointer" onClick={handleOpenLoginModal}><UserCircleIcon className="h-6 w-6 text-gray-700" /></a>
                     </div>
                 </div>
             </header>

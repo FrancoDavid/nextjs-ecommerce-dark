@@ -6,4 +6,14 @@ export async function authRegisterService(data) {
       "Content-Type": "application/json"
     }
   })  
+}
+
+export async function authLoginService(data) {
+  return await fetch("http://localhost:8080/api/user/login",{
+    body: JSON.stringify(data),
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })  
 } 
