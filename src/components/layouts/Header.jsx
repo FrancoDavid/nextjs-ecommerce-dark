@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { toast } from "sonner";
 
 import { ShoppingCartIcon } from '@heroicons/react/24/outline';
@@ -12,7 +12,6 @@ import { useBanner } from '@/contexts/Banner';
 import useRegisterModalStore from "@/stores/User/useRegisterModal";
 import useLoginModalStore from "@/stores/User/useLoginModal";
 import useUserStore from '@/stores/User/useUser';
-import { useEffect } from 'react';
 
 export default function Header() {
     const { highLighNewArrivals, highLighTopSelling, categories } = useScroll();
