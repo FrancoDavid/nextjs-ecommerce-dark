@@ -1,0 +1,4 @@
+export const PRODUCT_TYPES = {
+    NEW_ARRIBALS: "NEW_ARRIBALS",
+    TOP_SELLING: "TOP_SELLING",
+};
