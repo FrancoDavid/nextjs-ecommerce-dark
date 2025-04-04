@@ -13,14 +13,14 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <ScrollProvider>
         <BannerProvider>
-          <Header />
-          <body class="min-h-screen flex flex-col">
+          <body className="min-h-screen flex flex-col">
+            <Header />
             <Toaster richColors position="top-right" />
-            <main class="flex-1">
+            <main className="flex-1">
               {children}
             </main>
+            <Footer />
           </body>
-          <Footer />
         </BannerProvider>
       </ScrollProvider>
     </html>

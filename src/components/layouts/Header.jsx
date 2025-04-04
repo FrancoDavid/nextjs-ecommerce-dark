@@ -97,14 +97,14 @@ export default function Header() {
                                 </button>
                             </div>
                             {isOpenDropdownUser && (
-                                <div className="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white ring-1 shadow-lg ring-black/5 focus:outline-hidden" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                                <div className="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white ring-1 shadow-lg ring-black/5 focus:outline-hidden" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabIndex="-1">
                                     <div className="py-1" role="none">
-                                        {!isLoggedIn && <a className="block px-4 py-2 text-sm text-gray-700 cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-0" onClick={handleOpenLoginModal}>Log in</a>}
-                                        {isLoggedIn && <a className="block px-4 py-2 text-sm text-gray-700 cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-1">Profile</a>}
+                                        {!isLoggedIn && <a className="block px-4 py-2 text-sm text-gray-700 cursor-pointer" role="menuitem" tabIndex="-1" id="menu-item-0" onClick={handleOpenLoginModal}>Log in</a>}
+                                        {isLoggedIn && <a className="block px-4 py-2 text-sm text-gray-700 cursor-pointer" role="menuitem" tabIndex="-1" id="menu-item-1">Profile</a>}
                                     </div>
                                     {isLoggedIn && (
                                         <div className="py-1" role="none">
-                                            <a className="block px-4 py-2 text-sm text-gray-700 cursor-pointer" role="menuitem" tabindex="-1" id="menu-item-6" onClick={handleLogout}>Log out</a>
+                                            <a className="block px-4 py-2 text-sm text-gray-700 cursor-pointer" role="menuitem" tabIndex="-1" id="menu-item-6" onClick={handleLogout}>Log out</a>
                                         </div>
                                     )}
                                 </div>

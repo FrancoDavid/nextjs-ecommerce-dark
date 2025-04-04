@@ -1,5 +1,4 @@
 import { getProductsArribal } from "@/services/Product"
-
 import CardProduct from "@/components/common/CardProduct";
 
 export default async function HighlightArribals() {

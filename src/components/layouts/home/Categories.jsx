@@ -19,7 +19,7 @@ export default async function Categories() {
                 </div>
                 <div className="grid grid-cols-3 gap-4">
                     {categoriesResponse?.data?.map((category, index) => (
-                        <div className="p-4 h-[280px] bg-white bg-[url('/imgs/image-11.png')] bg-cover bg-center rounded-[20px] object-cover">
+                        <div key={index} className="p-4 h-[280px] bg-white bg-[url('/imgs/image-11.png')] bg-cover bg-center rounded-[20px] object-cover">
                             <h4 className="font-bold text-4xl">{category?.name}</h4>
                         </div>
                     ))}
