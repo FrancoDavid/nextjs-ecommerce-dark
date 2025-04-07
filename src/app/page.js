@@ -4,9 +4,6 @@ import Cover from "@/components/layouts/home/Cover";
 import Highlight from "@/components/layouts/home/Highlight";
 import HighlightProducts from "@/components/layouts/home/HighlightProducts";
 
-import LoginModal from "@/components/modals/Login";
-import RegisterModal from "@/components/modals/Register";
-
 import { PRODUCT_TYPES } from "@/config/constants";
 
 export default function Home() {
@@ -22,9 +19,6 @@ export default function Home() {
       <Categories>
         <CategoriesList />
       </Categories>
-
-      <RegisterModal />
-      <LoginModal />
     </>
   );
 }

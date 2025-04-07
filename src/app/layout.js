@@ -2,6 +2,9 @@ import { Toaster } from "sonner";
 
 import Header from "@/components/layouts/Header";
 import Footer from "@/components/layouts/Footer";
+import LoginModal from "@/components/modals/Login";
+import ProfileModal from "@/components/modals/Profile";
+import RegisterModal from "@/components/modals/Register";
 
 import { ScrollProvider } from "@/contexts/ScrollView";
 import { BannerProvider } from "@/contexts/Banner";
@@ -20,6 +23,10 @@ export default function RootLayout({ children }) {
               {children}
             </main>
             <Footer />
+
+            <LoginModal />
+            <RegisterModal />
+            <ProfileModal />
           </body>
         </BannerProvider>
       </ScrollProvider>
