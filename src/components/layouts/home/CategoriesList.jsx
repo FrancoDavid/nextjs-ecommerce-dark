@@ -7,7 +7,6 @@ export default async function CategoriesList() {
     return (
         <div className="grid grid-cols-3 gap-4">
             {categoriesResponse?.data?.map((category, index) => {
-                const shouldSpanTwo = index % 4 === 1 || index % 4 === 2;
                 return (
                     <CardBackground category={category} index={index} />
                 );

@@ -1,9 +1,10 @@
 import CardImage from "./CardImage"
+import { IMAGES_DICTIONARY } from "../../config/constants";
 
 export default function CardProduct({product}) {
     return (
         <div className="grid grid-cols-1">
-            <CardImage image="/imgs/image-7.png" name="image7"/>
+            <CardImage image={IMAGES_DICTIONARY.PRODUCTS+product?.url} name={product?.name}/>
             <p className="text-black text-base font-bold">
                 {product?.name}
             </p>

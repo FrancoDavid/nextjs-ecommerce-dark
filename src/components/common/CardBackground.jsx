@@ -1,8 +1,9 @@
 "use client"
 
 import { useRouter } from "next/navigation";
+import { IMAGES_DICTIONARY } from "@/config/constants";
 
-export default function CardBackground({ category, index}) {
+export default function CardBackground({ category, index }) {
     const router = useRouter();
 
     const gridCicle = 4;
@@ -14,12 +15,14 @@ export default function CardBackground({ category, index}) {
         router.push(`/products`);
     }
 
-
     return (
         <div
             key={index}
-            className={`p-4 h-[280px] bg-white bg-[url('/imgs/image-11.png')] bg-cover bg-center rounded-[20px] object-cov cursor-pointer ${withSpan ? "col-span-2" : ""}`}
-            onClick={handleRedirectProductsByCategory}    
+            className={`p-4 h-[280px] bg-white bg-cover bg-center rounded-[20px] object-cover cursor-pointer ${withSpan ? "col-span-2" : ""}`}
+            style={{
+                backgroundImage: `url(${IMAGES_DICTIONARY.CATEGORIES}${category?.url})`
+            }}
+            onClick={handleRedirectProductsByCategory}
         >
             <h4 className="font-bold text-4xl">{category.name}</h4>
         </div>
