@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import { toast } from "sonner";
+import Link from "next/link";
 
 import { ShoppingCartIcon } from '@heroicons/react/24/outline';
 import { UserCircleIcon } from '@heroicons/react/24/outline';
@@ -71,11 +72,11 @@ export default function Header() {
                 <div className="container mx-auto flex justify-between items-center p-4">
                     <a className="text-3xl font-bold text-black cursor-pointer">DarkShop</a>
                     <nav className="flex items-center space-x-6">
-                        <a className="hover:text-grey-700 cursor-pointer">Home</a>
+                        <Link className="hover:text-grey-700 cursor-pointer" href="/">Home</Link>
                         <a className="hover:text-grey-700 cursor-pointer" onClick={handleScrollToNewArrivals}>New Arribal</a>
                         <a className="hover:text-grey-700 cursor-pointer" onClick={handleScrollToTopSelling}>Top Seller</a>
                         <a className="hover:text-grey-700 cursor-pointer" onClick={handleScrollToCategories}>Categories</a>
-                        <a className="hover:text-grey-700 cursor-pointer">Shop</a>
+                        <Link className="hover:text-grey-700 cursor-pointer" href="/products">Shop</Link>
                     </nav>
                     <div className="mx-8">
                         <input
