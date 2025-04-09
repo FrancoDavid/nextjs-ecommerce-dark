@@ -1,4 +1,5 @@
 import Breadcrumbs from "@/components/common/Breadcrumbs";
+import Filters from "@/components/layouts/Products/Filters";
 
 export default function ProductsPage() {
 
@@ -10,6 +11,14 @@ export default function ProductsPage() {
   return (
     <>
       <Breadcrumbs breads={breadcrumbs} />
+      <div className="grid grid-cols-4 gap-4 px-[100px] py-[24px]">
+        <section className="col-span-1">
+          <Filters />
+        </section>
+        <section className="col-span-3">
+          products
+        </section>
+      </div>
     </>
   );
 }
