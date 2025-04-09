@@ -3,12 +3,20 @@ import Breadcrumbs from "@/components/common/Breadcrumbs";
 import Filters from "@/components/layouts/Products/Filters";
 import Grid from "@/components/layouts/Products/Grid";
 
-export default function ProductsPage() {
+export default async function ProductsPage({ searchParams }) {
 
   const breadcrumbs = [
       { name: "Home / ", href: "/" },
       { name: "Products", href: "/products" },
   ]
+
+  // const search = {
+  //   category: searchParams?.category || "",
+  //   page: searchParams?.page || 1,
+  //   size: searchParams?.size || 10,
+  // }
+
+  console.log("searchParams", searchParams);
 
   return (
     <>
