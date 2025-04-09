@@ -1,5 +1,7 @@
 import Breadcrumbs from "@/components/common/Breadcrumbs";
+
 import Filters from "@/components/layouts/Products/Filters";
+import Grid from "@/components/layouts/Products/Grid";
 
 export default function ProductsPage() {
 
@@ -16,7 +18,7 @@ export default function ProductsPage() {
           <Filters />
         </section>
         <section className="col-span-3">
-          products
+          <Grid />
         </section>
       </div>
     </>

@@ -23,3 +23,15 @@ export async function getProductsTopSelling() {
     
     return await response.json();
 }
+
+export async function getProducts() {
+  const response = await fetch(API_URL+"product/all",{
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    cache: "no-store"
+  })
+  
+  return await response.json();
+}
