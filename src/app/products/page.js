@@ -1,8 +1,15 @@
+import Breadcrumbs from "@/components/common/Breadcrumbs";
+
 export default function ProductsPage() {
+
+  const breadcrumbs = [
+      { name: "Home / ", href: "/" },
+      { name: "Products", href: "/products" },
+  ]
+
   return (
-    <div>
-      <h1>Products</h1>
-      <p>List of products will be displayed here.</p>
-    </div>
+    <>
+      <Breadcrumbs breads={breadcrumbs} />
+    </>
   );
 }
