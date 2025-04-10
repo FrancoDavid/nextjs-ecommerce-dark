@@ -4,17 +4,19 @@ import CardProduct from "@/components/common/CardProduct";
 
 export default async function HighlightProducts({ productsType }) {
 
-    let productsResponse = null
+    let products = null
 
     if (productsType === "TOP_SELLING") {
-        productsResponse = await getProductsTopSelling();
+        const productsResponse = await getProductsTopSelling();
+        products = productsResponse?.data?.result || [];
     }
 
     if (productsType === "NEW_ARRIBALS") {
-        productsResponse = await getProductsArribal();
+        const productsResponse = await getProductsArribal();
+        products = productsResponse?.data || [];
     }
 
-    if (!productsResponse || (productsResponse && productsResponse?.data && productsResponse?.data?.length === 0)) {
+    if (!products || (products && products.length === 0)) {
         return (
             <div className="flex justify-center items-center">
                 <h2 className="text-black font-bold text-5xl">No products available</h2>
@@ -24,7 +26,7 @@ export default async function HighlightProducts({ productsType }) {
 
     return (
         <div className="grid grid-cols-4 gap-10 py-[55px] px-[100px]">
-            {productsResponse?.data?.slice(0, 4).map((product, index) => (<CardProduct key={index} product={product} />))}
+            {products.slice(0, 4).map((product, index) => (<CardProduct key={index} product={product} />))}
         </div>
     )
 }

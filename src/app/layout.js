@@ -2,9 +2,9 @@ import { Toaster } from "sonner";
 
 import Header from "@/components/layouts/Header";
 import Footer from "@/components/layouts/Footer";
-import LoginModal from "@/components/modals/Login";
-import ProfileModal from "@/components/modals/Profile";
-import RegisterModal from "@/components/modals/Register";
+import LoginModal from "@/components/dialogs/Login";
+import ProfileModal from "@/components/dialogs/Profile";
+import RegisterModal from "@/components/dialogs/Register";
 
 import { ScrollProvider } from "@/contexts/ScrollView";
 import { BannerProvider } from "@/contexts/Banner";
