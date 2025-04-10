@@ -14,7 +14,13 @@ export default async function Grid({ search }) {
             <div className="grid grid-cols-3 gap-6 mx-4">
                 {productsResponse?.data?.result?.map((product, index) => (
                     <CardProduct key={index} product={product} />
-                ))} 
+                ))}
+
+                {productsResponse?.data?.result?.length === 0 && (
+                    <div className="col-span-3 text-center">
+                        <span className="text-[16px] text-gray-400">No products found</span>
+                    </div>
+                )} 
             </div>
 
             <Paginator page={productsResponse?.data?.page} pages={productsResponse?.data?.pages}/>
