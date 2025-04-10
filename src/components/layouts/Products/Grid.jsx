@@ -9,15 +9,15 @@ export default async function Grid({ search }) {
     return (
         <div className="grid grid-cols-1 gap-3">
             <div className="flex items-center justify-end">
-                <span className="text-[16px] text-gray-400">counter</span>
+                <span className="text-[16px] text-gray-400 text-ligth">Showing {productsResponse?.data?.count} of {productsResponse?.data?.total} Products</span>
             </div>
             <div className="grid grid-cols-3 gap-6 mx-4">
                 {productsResponse?.data?.result?.map((product, index) => (
                     <CardProduct key={index} product={product} />
-                ))}
+                ))} 
             </div>
 
-            <Paginator />
+            <Paginator page={productsResponse?.data?.page} pages={productsResponse?.data?.pages}/>
         </div>
     )
 }

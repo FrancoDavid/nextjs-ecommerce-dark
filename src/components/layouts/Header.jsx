@@ -86,12 +86,6 @@ export default function Header() {
                         <Link className="hover:text-grey-700 cursor-pointer"
                             href={`/products?page=${PAGES_DICTIONARY.INIT}&size=${SIZE_PAGES_DICTIONARY.MEDIUM}`}>Shop</Link>
                     </nav>
-                    <div className="mx-8">
-                        <input
-                            type="text"
-                            placeholder="Search..."
-                            className="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
-                    </div>
                     <div className="flex items-center space-x-4">
                         <a className="cursor-pointer"><ShoppingCartIcon className="h-6 w-6 text-gray-700" /></a>
                         <div className="relative inline-block text-left" ref={userDropdownRef}>
