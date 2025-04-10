@@ -3,6 +3,9 @@
 import { useRouter } from "next/navigation";
 import { IMAGES_DICTIONARY } from "@/config/constants";
 
+import { SIZE_PAGES_DICTIONARY, PAGES_DICTIONARY } from "@/config/constants";
+
+
 export default function CardBackground({ category, index }) {
     const router = useRouter();
 
@@ -12,7 +15,7 @@ export default function CardBackground({ category, index }) {
     const withSpan = index % gridCicle === secondGrid || index % gridCicle === thirdGrid;
 
     const handleRedirectProductsByCategory = () => {
-        router.push(`/products`);
+        router.push(`/products?categoryName=${category.name}&page=${PAGES_DICTIONARY.INIT}&size=${SIZE_PAGES_DICTIONARY.MEDIUM}`)
     }
 
     return (

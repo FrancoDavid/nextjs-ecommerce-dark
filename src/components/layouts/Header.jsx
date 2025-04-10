@@ -15,6 +15,8 @@ import useLoginModalStore from "@/stores/User/useLoginModal";
 import useUserStore from '@/stores/User/useUser';
 import useProfileModalStore from "@/stores/User/useProfileModal";
 
+import { SIZE_PAGES_DICTIONARY, PAGES_DICTIONARY } from "@/config/constants";
+
 export default function Header() {
     const { highLighNewArrivals, highLighTopSelling, categories } = useScroll();
     const { isOpenBanner } = useBanner();
@@ -81,7 +83,8 @@ export default function Header() {
                         <a className="hover:text-grey-700 cursor-pointer" onClick={handleScrollToNewArrivals}>New Arribal</a>
                         <a className="hover:text-grey-700 cursor-pointer" onClick={handleScrollToTopSelling}>Top Seller</a>
                         <a className="hover:text-grey-700 cursor-pointer" onClick={handleScrollToCategories}>Categories</a>
-                        <Link className="hover:text-grey-700 cursor-pointer" href="/products">Shop</Link>
+                        <Link className="hover:text-grey-700 cursor-pointer"
+                            href={`/products?page=${PAGES_DICTIONARY.INIT}&size=${SIZE_PAGES_DICTIONARY.MEDIUM}`}>Shop</Link>
                     </nav>
                     <div className="mx-8">
                         <input

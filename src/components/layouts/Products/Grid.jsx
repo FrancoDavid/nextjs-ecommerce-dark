@@ -12,7 +12,7 @@ export default async function Grid() {
                 <span className="text-[16px] text-gray-400">counter</span>
             </div>
             <div className="grid grid-cols-3 gap-6 mx-4">
-                {productsResponse?.data?.map((product, index) => (
+                {productsResponse?.data?.result?.map((product, index) => (
                     <CardProduct key={index} product={product} />
                 ))}
             </div>

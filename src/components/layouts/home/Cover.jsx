@@ -3,11 +3,13 @@
 import { IMAGES_DICTIONARY } from "@/config/constants";
 import { useRouter } from "next/navigation"
 
+import { SIZE_PAGES_DICTIONARY, PAGES_DICTIONARY } from "@/config/constants";
+
 export default function Cover() {
     const router = useRouter();
 
     const handleRedirectToProducts = () => {
-        router.push("/products");
+        router.push(`/products?page=${PAGES_DICTIONARY.INIT}&size=${SIZE_PAGES_DICTIONARY.MEDIUM}`)
     }
 
     return (
