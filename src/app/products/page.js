@@ -10,13 +10,11 @@ export default async function ProductsPage({ searchParams }) {
       { name: "Products", href: "/products" },
   ]
 
-  // const search = {
-  //   category: searchParams?.category || "",
-  //   page: searchParams?.page || 1,
-  //   size: searchParams?.size || 10,
-  // }
-
-  console.log("searchParams", searchParams);
+  const search = {
+    category: searchParams?.categoryName || "",
+    page: searchParams?.page || 1,
+    size: searchParams?.size || 10,
+  }
 
   return (
     <>
@@ -26,7 +24,7 @@ export default async function ProductsPage({ searchParams }) {
           <Filters />
         </section>
         <section className="col-span-3">
-          <Grid />
+          <Grid search={search}/>
         </section>
       </div>
     </>

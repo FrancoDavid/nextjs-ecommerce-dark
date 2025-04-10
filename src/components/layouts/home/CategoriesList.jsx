@@ -8,7 +8,7 @@ export default async function CategoriesList() {
         <div className="grid grid-cols-3 gap-4">
             {categoriesResponse?.data?.map((category, index) => {
                 return (
-                    <CardBackground category={category} index={index} />
+                    <CardBackground key={index} category={category} index={index} />
                 );
             })}
         </div>

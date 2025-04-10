@@ -3,8 +3,8 @@ import Paginator from "@/components/common/Paginator";
 
 import { getProducts } from "@/services/Product";
 
-export default async function Grid() {
-    const productsResponse = await getProducts();
+export default async function Grid({ search }) {
+    const productsResponse = await getProducts(search.category, search.page, search.size);
 
     return (
         <div className="grid grid-cols-1 gap-3">
