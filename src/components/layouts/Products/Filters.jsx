@@ -1,7 +1,8 @@
 import { AdjustmentsHorizontalIcon } from "@heroicons/react/24/outline"
-import { ChevronRightIcon } from "@heroicons/react/24/outline"
 
 import { getCategories } from "@/services/Category"
+
+import CategoriesFilter from "./CategoriesFilter";
 
 export default async function Filters() {
     const categoriesResponse = await getCategories();
@@ -14,10 +15,7 @@ export default async function Filters() {
             </div>
             {categoriesResponse?.data?.map((category, index) => {
                 return (
-                    <div key={index} className="flex items-center justify-between cursor-pointer">
-                        <p className="text-[16px] font-light text-gray-400 hover:text-gray-600">{category?.name}</p>
-                        <ChevronRightIcon className="h-4 w-4 text-gray-700" />
-                    </div>
+                    <CategoriesFilter key={index} name={category.name} />
                 );
             })}
         </div>
