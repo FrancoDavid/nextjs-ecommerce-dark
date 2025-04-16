@@ -47,3 +47,15 @@ export async function getProducts(categoryName, page=PAGES_DICTIONARY.INIT, size
   
   return await response.json();
 }
+
+export async function getProduct(id) {
+  const response = await fetch(API_URL+"product/"+id,{
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    cache: "no-store"
+  })
+  
+  return await response.json();
+}

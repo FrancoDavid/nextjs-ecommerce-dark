@@ -7,7 +7,7 @@ export default async function ProductsPage({ searchParams }) {
 
   const breadcrumbs = [
       { name: "Home / ", href: "/" },
-      { name: "Products", href: "/products" },
+      { name: "Products", href: "" },
   ]
 
   const search = {
