@@ -4,9 +4,9 @@ export const PRODUCT_TYPES_DICTIONARY = {
 };
 
 export const IMAGES_DICTIONARY = {
-    PRODUCTS: "imgs/products/",
-    CATEGORIES: "imgs/categories/",
-    COVER: "imgs/cover/"
+    PRODUCTS: "/imgs/products/",
+    CATEGORIES: "/imgs/categories/",
+    COVER: "/imgs/cover/"
 }
 
 export const SIZE_PAGES_DICTIONARY = {
