@@ -1,11 +1,11 @@
 import Breadcrumbs from "@/components/common/Breadcrumbs";
 import CardImage from "@/components/common/CardImage";
-import Counter from "@/components/common/Counter";
 import CardProduct from "@/components/common/CardProduct";
 
 import { getProduct, getProducts } from "@/services/Product";
 
 import { IMAGES_DICTIONARY, SIZE_PAGES_DICTIONARY, PAGES_DICTIONARY } from "@/config/constants";
+import CallAction from "@/components/layouts/Product/CallAction";
 
 export default async function ProductDetailPage({ params }) {
 
@@ -46,13 +46,12 @@ export default async function ProductDetailPage({ params }) {
                         {product?.description}
                     </p>
 
+                    <p className="text-gray-400 text-sm font-light">
+                        Stock: {product?.stock}
+                    </p>
 
-                    <div className="grid grid-cols-3 gap-4 mt-4">
-                        <Counter />
-                        <button className="bg-black text-white text-lg font-bold py-2 px-4 rounded-full">
-                            Add to Cart
-                        </button>
-                    </div>
+
+                    <CallAction stock={product?.stock}/>
                 </section>
 
                 {products && products.length > 0 && (
