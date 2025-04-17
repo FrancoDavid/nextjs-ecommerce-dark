@@ -10,7 +10,7 @@ export const IMAGES_DICTIONARY = {
 }
 
 export const SIZE_PAGES_DICTIONARY = {
-    SMALL: 5,
+    SMALL: 4,
     MEDIUM: 10,
     LARGE: 20,
 }

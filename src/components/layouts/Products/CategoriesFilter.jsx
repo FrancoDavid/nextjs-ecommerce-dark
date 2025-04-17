@@ -1,8 +1,11 @@
 "use client"
 
+import { useMemo } from "react";
+
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { ChevronRightIcon, XMarkIcon } from "@heroicons/react/24/outline"
-import { useMemo } from "react";
+
+import { PAGES_DICTIONARY } from "@/config/constants";
 
 export default function CategoriesFilter({ name }) {
     const router = useRouter();
@@ -15,12 +18,14 @@ export default function CategoriesFilter({ name }) {
     const handleFilterByCategory = (name) => () => {
         const params = new URLSearchParams(searchParams);
         params.set('categoryName', name);
+        params.set('page', PAGES_DICTIONARY.INIT);
         router.push(`${pathname}?${params.toString()}`);
     }
 
     const handleCleanFilterByCategory = () => {
         const params = new URLSearchParams(searchParams);
         params.delete('categoryName');
+        params.set('page', PAGES_DICTIONARY.INIT);
         router.push(`${pathname}?${params.toString()}`);
     }
 
