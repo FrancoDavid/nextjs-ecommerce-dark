@@ -1,20 +1,14 @@
-"use client";
-
-import { useState } from "react";
-
-export default function Counter({ disabled, limit }) {
-
-    const [count, setCount] = useState(1);
+export default function Counter({ disabled, limit, counter, onChange }) {
     
     const handleAdd = () => {
-        if (count < limit) {
-            setCount(count + 1);
+        if (counter < limit) {
+            onChange(counter + 1);
         }
     }
 
     const handleLess = () => {
-        if (count > 1) {
-            setCount(count - 1);
+        if (counter > 1) {
+            onChange(counter - 1);
         }
     }
 
@@ -26,7 +20,7 @@ export default function Counter({ disabled, limit }) {
                 onClick={handleLess}>
                 -
             </button>
-            <span className="text-white text-2xl font-bold">{count}</span>
+            <span className="text-white text-2xl font-bold">{counter}</span>
             <button
                 className={`text-2xl font-bold ${!disabled ? 'text-white' : 'text-gray-400 cursor-not-allowed'}`}
                 disabled={disabled}

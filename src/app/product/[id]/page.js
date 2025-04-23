@@ -55,7 +55,7 @@ export default async function ProductDetailPage({ params }) {
                         <Tag text={'Product without stock!'} color={'bg-red-400'} />
                     )}
 
-                    <CallAction stock={product?.stock} />
+                    <CallAction item={product} />
                 </section>
 
                 {products && products.length > 0 && (
