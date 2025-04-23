@@ -7,7 +7,7 @@ const useCartStore = create((set) => ({
         subtotal: 0,
         delivery: 10000
     },
-    addToCart: (item) => set((state) => ({ cart: { items: [...state.cart.items, item]}})),
+    addToCart: (item) => set((state) => ({ cart: {...state.cart, items: [...state.cart.items, item]}})),
     removeFromCart: (itemId) => set((state) => ({
         cart: state.cart.filter(item => item.id !== itemId)
     })),
