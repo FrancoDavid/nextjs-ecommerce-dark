@@ -16,6 +16,7 @@ import useUserStore from '@/stores/User/useUser';
 import useProfileModalStore from "@/stores/User/useProfileModal";
 
 import { SIZE_PAGES_DICTIONARY, PAGES_DICTIONARY } from "@/config/constants";
+import useCartStore from "@/stores/Cart/useCart";
 
 export default function Header() {
     const { highLighNewArrivals, highLighTopSelling, categories } = useScroll();
@@ -25,6 +26,7 @@ export default function Header() {
     const { open: openLoginModal } = useLoginModalStore();
     const { user, logout } = useUserStore();
     const { open: openProfileModal } = useProfileModalStore();
+    const { cart: { items } } = useCartStore();
 
     const [isOpenDropdownUser, setIsOpenDropdownUser] = useState(false);
 
@@ -87,7 +89,15 @@ export default function Header() {
                             href={`/products?page=${PAGES_DICTIONARY.INIT}&size=${SIZE_PAGES_DICTIONARY.MEDIUM}`}>Shop</Link>
                     </nav>
                     <div className="flex items-center space-x-4">
-                        <a className="cursor-pointer"><ShoppingCartIcon className="h-6 w-6 text-gray-700" /></a>
+                        <Link href="/cart" className="relative cursor-pointer">
+                            <ShoppingCartIcon className="h-6 w-6 text-gray-700" />
+                            {items && items.length > 0 && (
+                                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full">
+                                    {items.length}
+                                </span>
+                            )}
+
+                        </Link>
                         <div className="relative inline-block text-left" ref={userDropdownRef}>
                             <div>
                                 <button type="button"
