@@ -1,5 +1,6 @@
 import Breadcrumbs from "@/components/common/Breadcrumbs";
 import CartContent from "@/components/layouts/cart/CartContent";
+import CartTotal from "@/components/layouts/cart/CartTotal";
 
 export default async function CartPage() {
 
@@ -20,8 +21,8 @@ export default async function CartPage() {
                 <section className="col-span-3">
                    <CartContent />
                 </section>
-                <section className="col-span-2 rounded-lg border border-slate-200 bg-white p-4">
-                    totales
+                <section className="col-span-2">
+                    <CartTotal />
                 </section>
             </div>
         </>
