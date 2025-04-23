@@ -1,11 +1,12 @@
 import Breadcrumbs from "@/components/common/Breadcrumbs";
+import CallAction from "@/components/layouts/Product/CallAction";
 import CardImage from "@/components/common/CardImage";
 import CardProduct from "@/components/common/CardProduct";
+import Tag from "@/components/common/Tag";
 
 import { getProduct, getProducts } from "@/services/Product";
 
 import { IMAGES_DICTIONARY, SIZE_PAGES_DICTIONARY, PAGES_DICTIONARY } from "@/config/constants";
-import CallAction from "@/components/layouts/Product/CallAction";
 
 export default async function ProductDetailPage({ params }) {
 
@@ -46,12 +47,15 @@ export default async function ProductDetailPage({ params }) {
                         {product?.description}
                     </p>
 
-                    <p className="text-gray-400 text-sm font-light">
+                    <p className="text-gray-400 text-sm font-light mb-4">
                         Stock: {product?.stock}
                     </p>
 
+                    {product?.stock === 0 && (
+                        <Tag text={'Product without stock!'} color={'bg-red-400'} />
+                    )}
 
-                    <CallAction stock={product?.stock}/>
+                    <CallAction stock={product?.stock} />
                 </section>
 
                 {products && products.length > 0 && (
