@@ -4,7 +4,10 @@ import { useState } from "react";
 import { toast } from "sonner";
 
 import useRegisterModalStore from "@/stores/User/useRegisterModal";
+import useUserStore from "@/stores/User/useUser";
+
 import { postRegisterService } from "@/services/Auth";
+
 import { useBanner } from "@/contexts/Banner";
 
 import SpinLoad from "../common/SpinLoad";
@@ -12,6 +15,7 @@ import SpinLoad from "../common/SpinLoad";
 export default function RegisterModal() {
     const { isOpen: isOpenModal, close: closeModal } = useRegisterModalStore();
     const { closeBanner } = useBanner();
+    const { setUser } = useUserStore();
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -34,10 +38,11 @@ export default function RegisterModal() {
             role: "CLIENT"
         })
             .then(async (res) => {
-                
+                console.log('response', res);
+                const response = await res.json()
+
                 if (!res.ok) {
-                    const error = await res.json();
-                    toast.error("Error register: "+error?.message || "User not created" );
+                    toast.error("Error register: "+response?.message || "User not created" );
                     return;
                 }
                 
@@ -48,6 +53,8 @@ export default function RegisterModal() {
                 setEmail("");
                 setPassword("");
                 
+                setUser(response.data);
+
                 toast.success("User created!");
             })
             .catch((err) => {
