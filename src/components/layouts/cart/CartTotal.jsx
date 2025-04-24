@@ -1,10 +1,21 @@
 "use client";
 
 import { useEffect } from "react";
+import { toast } from "sonner";
+
 import useCartStore from "@/stores/Cart/useCart";
+import useUserStore from "@/stores/User/useUser";
 
 export default function CartTotal() {
     const { cart: { subtotal, total, delivery, items }, calculateTotal } = useCartStore();
+    const { user } = useUserStore();
+
+    const handleBuy = () => {
+        if (!user) {
+            toast.warning("Please log in to proceed to checkout.");
+            return;
+        }
+    }
 
     useEffect(() => calculateTotal(), [items])
 
@@ -23,7 +34,11 @@ export default function CartTotal() {
                 <p className="font-bold text-[20px] color-gray-400">Total</p>
                 <p className="font-bold text-[20px]">${total}</p>
             </div>
-            <button className="bg-black text-white px-6 py-3 mt-4 rounded-4xl w-[210px] hover:bg-gray-800">Go to Checkout</button>
+            <button
+                className="bg-black text-white px-6 py-3 mt-4 rounded-4xl w-[210px] hover:bg-gray-800"
+                onClick={handleBuy}>
+                    Buy Now
+            </button>
         </div>
     );
 }
