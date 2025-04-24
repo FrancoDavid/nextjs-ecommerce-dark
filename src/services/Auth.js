@@ -2,7 +2,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 
 export async function postRegisterService(data) {
-  return await fetch(API_URL+"user/register",{
+  return await fetch(API_URL+"auth/register",{
     body: JSON.stringify(data),
     method: "POST",
     headers: {
@@ -12,7 +12,7 @@ export async function postRegisterService(data) {
 }
 
 export async function postLoginService(data) {
-  return await fetch(API_URL+"user/login",{
+  return await fetch(API_URL+"auth/login",{
     body: JSON.stringify(data),
     method: "POST",
     headers: {
