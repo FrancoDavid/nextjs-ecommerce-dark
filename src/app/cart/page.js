@@ -1,6 +1,12 @@
 import Breadcrumbs from "@/components/common/Breadcrumbs";
+import AnimatedWrapper from "@/components/layouts/AnimatedWrapper";
 import CartContent from "@/components/layouts/cart/CartContent";
 import CartTotal from "@/components/layouts/cart/CartTotal";
+
+export const metadata = {
+    viewTransition: true,
+};
+  
 
 export default async function CartPage() {
 
@@ -11,7 +17,7 @@ export default async function CartPage() {
     ]
 
     return (
-        <>
+        <AnimatedWrapper>
             <Breadcrumbs breads={breadcrumbs} />
             <div className="grid grid-cols-5 gap-4 px-[100px] py-[24px]">
                 <section className="col-span-5">
@@ -26,6 +32,6 @@ export default async function CartPage() {
                     <CartTotal />
                 </section>
             </div>
-        </>
+        </AnimatedWrapper>
     );
 }

@@ -81,15 +81,22 @@ export default function Header() {
                 <div className="container mx-auto flex justify-between items-center p-4">
                     <a className="text-3xl font-bold text-black cursor-pointer">DarkShop</a>
                     <nav className="flex items-center space-x-6">
-                        <Link className="hover:text-grey-700 cursor-pointer" href="/">Home</Link>
+                        <Link
+                            className="hover:text-grey-700 cursor-pointer"
+                            href="/"
+                            prefetch={true}>
+                                Home
+                        </Link>
                         <a className="hover:text-grey-700 cursor-pointer" onClick={handleScrollToNewArrivals}>New Arribal</a>
                         <a className="hover:text-grey-700 cursor-pointer" onClick={handleScrollToTopSelling}>Top Seller</a>
                         <a className="hover:text-grey-700 cursor-pointer" onClick={handleScrollToCategories}>Categories</a>
-                        <Link className="hover:text-grey-700 cursor-pointer"
-                            href={`/products?page=${PAGES_DICTIONARY.INIT}&size=${SIZE_PAGES_DICTIONARY.MEDIUM}`}>Shop</Link>
+                        <Link
+                            className="hover:text-grey-700 cursor-pointer"
+                            href={`/products?page=${PAGES_DICTIONARY.INIT}&size=${SIZE_PAGES_DICTIONARY.MEDIUM}`}
+                            prefetch={true}>Shop</Link>
                     </nav>
                     <div className="flex items-center space-x-4">
-                        <Link href="/cart" className="relative cursor-pointer">
+                        <Link href="/cart" className="relative cursor-pointer" prefetch={true}>
                             <ShoppingCartIcon className="h-6 w-6 text-gray-700" />
                             {items && items.length > 0 && (
                                 <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold px-1.5 py-0.5 rounded-full">

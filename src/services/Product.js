@@ -8,7 +8,7 @@ export async function getProductsArribal() {
       headers: {
         "Content-Type": "application/json"
       },
-      cache: "no-store"
+      cache: "force-cache"
     })
     
     return await response.json();
@@ -20,7 +20,7 @@ export async function getProductsTopSelling() {
       headers: {
         "Content-Type": "application/json"
       },
-      cache: "no-store"
+      cache: "force-cache"
     })
     
     return await response.json();
@@ -42,7 +42,7 @@ export async function getProducts(categoryName, page=PAGES_DICTIONARY.INIT, size
     headers: {
       "Content-Type": "application/json"
     },
-    cache: "no-store"
+    cache: "force-cache"
   })
   
   return await response.json();
@@ -54,7 +54,7 @@ export async function getProduct(id) {
     headers: {
       "Content-Type": "application/json"
     },
-    cache: "no-store"
+    cache: "force-cache"
   })
   
   return await response.json();

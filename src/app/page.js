@@ -1,3 +1,4 @@
+import AnimatedWrapper from "@/components/layouts/AnimatedWrapper";
 import Categories from "@/components/layouts/home/Categories";
 import CategoriesList from "@/components/layouts/home/CategoriesList";
 import Cover from "@/components/layouts/home/Cover";
@@ -6,9 +7,14 @@ import HighlightProducts from "@/components/layouts/home/HighlightProducts";
 
 import { PRODUCT_TYPES_DICTIONARY } from "@/config/constants";
 
+export const metadata = {
+  viewTransition: true,
+};
+
+
 export default function Home() {
   return (
-    <>
+    <AnimatedWrapper>
       <Cover />
       <Highlight sectionType={PRODUCT_TYPES_DICTIONARY.NEW_ARRIBALS} title="NEW ARRIVALS">
         <HighlightProducts productsType={PRODUCT_TYPES_DICTIONARY.NEW_ARRIBALS}/>
@@ -19,6 +25,6 @@ export default function Home() {
       <Categories>
         <CategoriesList />
       </Categories>
-    </>
+    </AnimatedWrapper>
   );
 }

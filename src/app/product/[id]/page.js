@@ -7,6 +7,12 @@ import Tag from "@/components/common/Tag";
 import { getProduct, getProducts } from "@/services/Product";
 
 import { IMAGES_DICTIONARY, SIZE_PAGES_DICTIONARY, PAGES_DICTIONARY } from "@/config/constants";
+import AnimatedWrapper from "@/components/layouts/AnimatedWrapper";
+
+export const metadata = {
+    viewTransition: true,
+};
+  
 
 export default async function ProductDetailPage({ params }) {
 
@@ -33,7 +39,7 @@ export default async function ProductDetailPage({ params }) {
     const products = productsResponse?.data?.result || [];
 
     return (
-        <>
+        <AnimatedWrapper>
             <Breadcrumbs breads={breadcrumbs} />
             <div className="grid grid-cols-5 gap-4 px-[100px] py-[24px]">
                 <section className="col-span-2">
@@ -71,6 +77,6 @@ export default async function ProductDetailPage({ params }) {
                     </section>
                 )}
             </div>
-        </>
+        </AnimatedWrapper>
     );
 }

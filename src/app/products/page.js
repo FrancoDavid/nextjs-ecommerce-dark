@@ -1,7 +1,12 @@
 import Breadcrumbs from "@/components/common/Breadcrumbs";
 
+import AnimatedWrapper from "@/components/layouts/AnimatedWrapper";
 import Filters from "@/components/layouts/Products/Filters";
 import Grid from "@/components/layouts/Products/Grid";
+
+export const metadata = {
+  viewTransition: true,
+};
 
 export default async function ProductsPage({ searchParams }) {
 
@@ -17,7 +22,7 @@ export default async function ProductsPage({ searchParams }) {
   }
 
   return (
-    <>
+    <AnimatedWrapper>
       <Breadcrumbs breads={breadcrumbs} />
       <div className="grid grid-cols-4 gap-4 px-[100px] py-[24px]">
         <section className="col-span-1">
@@ -27,6 +32,6 @@ export default async function ProductsPage({ searchParams }) {
           <Grid search={search}/>
         </section>
       </div>
-    </>
+    </AnimatedWrapper>
   );
 }
