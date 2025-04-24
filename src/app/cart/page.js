@@ -6,6 +6,7 @@ export default async function CartPage() {
 
     const breadcrumbs = [
         { name: "Home / ", href: "/" },
+        { name: "Products / ", href: "/products" },
         { name: "Cart ", href: "" },
     ]
 
