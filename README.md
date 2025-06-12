@@ -1,7 +1,3 @@
-Aquí tienes un README profesional, claro y motivador para tu repo **nextjs-ecommerce-dark**. Siéntete libre de ajustarlo a los detalles exactos del proyecto:
-
----
-
 # 🛍️ nextjs-ecommerce-dark
 
 Un e‑commerce de ropa moderno y elegante creado con **Next.js** (App Router), utilizando theme oscuro por defecto para una experiencia visual atractiva y cómoda.
